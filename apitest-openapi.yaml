@@ -1,0 +1,46 @@
+openapi: "3.0.3"
+info:
+  title: "apitest API"
+  description: "apitest API"
+  version: "1.0.0"
+servers:
+  - url: "https://apitest"
+paths:
+  /movies/awards/interval:
+    get:
+      summary: "GET movies/awards/interval"
+      operationId: "getData"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/SearchAwardsIntervalDTO"
+components:
+  schemas:
+    AwardsDTO:
+      type: "object"
+      properties:
+        producer:
+          type: "string"
+        interval:
+          type: "integer"
+          format: "int32"
+        previousWin:
+          type: "integer"
+          format: "int32"
+        followingWin:
+          type: "integer"
+          format: "int32"
+    SearchAwardsIntervalDTO:
+      type: "object"
+      properties:
+        min:
+          type: "array"
+          items:
+            $ref: "#/components/schemas/AwardsDTO"
+        max:
+          type: "array"
+          items:
+            $ref: "#/components/schemas/AwardsDTO"

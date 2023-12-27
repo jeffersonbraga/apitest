@@ -1,0 +1,16 @@
+version: '2'
+services:
+  apitest:
+    container_name: apitest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: apitest:latest
+    ports:
+      - 18080:8080
+    networks:
+      - spring-cloud-network
+    hostname: apitest
+networks:
+  spring-cloud-network:
+    driver: bridge
