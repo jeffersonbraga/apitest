@@ -1,4 +1,4 @@
-FROM openjdk:20-bullseye
+FROM openjdk:21-bullseye
 LABEL authors="jefferson"
 
 COPY target/apitest-0.0.1-SNAPSHOT.jar apitest.jar
