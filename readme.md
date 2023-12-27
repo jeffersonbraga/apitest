@@ -14,3 +14,4 @@
     - java -jar target/apitest-0.0.1-SNAPSHOT.jar
 
 - Efetuar chamada para URL http://localhost:8080/movies/awards/interval
+- * Ao alterar a fonte de dados de inicialização o teste de integração, pode haver quebra pela comparação de resultado. Pode ser comentada a comparação de resultados obtido e esperado.
